@@ -1,0 +1,87 @@
+<svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="760" height="420" fill="#0d1117" rx="12"/>
+
+  <!-- Title -->
+  <text x="380" y="36" text-anchor="middle" font-size="16" font-weight="bold" fill="#e6edf3">VAD Threshold: 0.5 vs 0.6 — Effect on Segmentation</text>
+  <line x1="60" y1="48" x2="700" y2="48" stroke="#30363d" stroke-width="1"/>
+
+  <!-- ────────── TOP PANEL: threshold = 0.5 ────────── -->
+  <text x="70" y="72" font-size="12" font-weight="bold" fill="#f85149">threshold = 0.5  (default — over-segments)</text>
+
+  <!-- Waveform background bar -->
+  <rect x="70" y="82" width="620" height="48" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Simulated waveform blobs -->
+  <rect x="80"  y="88" width="55" height="36" rx="3" fill="#21262d"/>
+  <rect x="145" y="88" width="70" height="36" rx="3" fill="#21262d"/>
+  <rect x="225" y="88" width="30" height="36" rx="3" fill="#21262d"/>
+  <rect x="265" y="88" width="80" height="36" rx="3" fill="#21262d"/>
+  <rect x="355" y="88" width="45" height="36" rx="3" fill="#21262d"/>
+  <rect x="410" y="88" width="65" height="36" rx="3" fill="#21262d"/>
+  <rect x="485" y="88" width="35" height="36" rx="3" fill="#21262d"/>
+  <rect x="530" y="88" width="75" height="36" rx="3" fill="#21262d"/>
+  <rect x="615" y="88" width="60" height="36" rx="3" fill="#21262d"/>
+
+  <!-- VAD segments at 0.5 — many small red boxes -->
+  <rect x="80"  y="140" width="55" height="18" rx="3" fill="#f851491a" stroke="#f85149" stroke-width="1.2"/>
+  <rect x="145" y="140" width="70" height="18" rx="3" fill="#f851491a" stroke="#f85149" stroke-width="1.2"/>
+  <rect x="225" y="140" width="30" height="18" rx="3" fill="#f851491a" stroke="#f85149" stroke-width="1.2"/>
+  <rect x="265" y="140" width="80" height="18" rx="3" fill="#f851491a" stroke="#f85149" stroke-width="1.2"/>
+  <rect x="355" y="140" width="45" height="18" rx="3" fill="#f851491a" stroke="#f85149" stroke-width="1.2"/>
+  <rect x="410" y="140" width="65" height="18" rx="3" fill="#f851491a" stroke="#f85149" stroke-width="1.2"/>
+  <rect x="485" y="140" width="35" height="18" rx="3" fill="#f851491a" stroke="#f85149" stroke-width="1.2"/>
+  <rect x="530" y="140" width="75" height="18" rx="3" fill="#f851491a" stroke="#f85149" stroke-width="1.2"/>
+  <rect x="615" y="140" width="60" height="18" rx="3" fill="#f851491a" stroke="#f85149" stroke-width="1.2"/>
+
+  <!-- Segment labels -->
+  <text x="107"  y="153" text-anchor="middle" font-size="8" fill="#f85149">seg 1</text>
+  <text x="180"  y="153" text-anchor="middle" font-size="8" fill="#f85149">seg 2</text>
+  <text x="240"  y="153" text-anchor="middle" font-size="8" fill="#f85149">seg 3</text>
+  <text x="305"  y="153" text-anchor="middle" font-size="8" fill="#f85149">seg 4</text>
+  <text x="377"  y="153" text-anchor="middle" font-size="8" fill="#f85149">seg 5</text>
+  <text x="442"  y="153" text-anchor="middle" font-size="8" fill="#f85149">seg 6</text>
+  <text x="502"  y="153" text-anchor="middle" font-size="8" fill="#f85149">seg 7</text>
+  <text x="567"  y="153" text-anchor="middle" font-size="8" fill="#f85149">seg 8</text>
+  <text x="645"  y="153" text-anchor="middle" font-size="8" fill="#f85149">seg 9</text>
+
+  <text x="380" y="177" text-anchor="middle" font-size="11" fill="#f85149">✗  9 fragments detected — mid-sentence splits, incoherent boundaries</text>
+
+  <!-- Divider -->
+  <line x1="60" y1="192" x2="700" y2="192" stroke="#30363d" stroke-width="1" stroke-dasharray="4 4"/>
+
+  <!-- ────────── BOTTOM PANEL: threshold = 0.6 ────────── -->
+  <text x="70" y="216" font-size="12" font-weight="bold" fill="#3fb950">threshold = 0.6  (tuned — sentence-aligned)</text>
+
+  <!-- Waveform background bar -->
+  <rect x="70" y="226" width="620" height="48" rx="4" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+
+  <!-- Same waveform blobs -->
+  <rect x="80"  y="232" width="55" height="36" rx="3" fill="#21262d"/>
+  <rect x="145" y="232" width="70" height="36" rx="3" fill="#21262d"/>
+  <rect x="225" y="232" width="30" height="36" rx="3" fill="#21262d"/>
+  <rect x="265" y="232" width="80" height="36" rx="3" fill="#21262d"/>
+  <rect x="355" y="232" width="45" height="36" rx="3" fill="#21262d"/>
+  <rect x="410" y="232" width="65" height="36" rx="3" fill="#21262d"/>
+  <rect x="485" y="232" width="35" height="36" rx="3" fill="#21262d"/>
+  <rect x="530" y="232" width="75" height="36" rx="3" fill="#21262d"/>
+  <rect x="615" y="232" width="60" height="36" rx="3" fill="#21262d"/>
+
+  <!-- VAD segments at 0.6 — 3 clean merged green boxes -->
+  <rect x="80"  y="284" width="235" height="18" rx="3" fill="#23863626" stroke="#3fb950" stroke-width="1.5"/>
+  <rect x="355" y="284" width="120" height="18" rx="3" fill="#23863626" stroke="#3fb950" stroke-width="1.5"/>
+  <rect x="530" y="284" width="145" height="18" rx="3" fill="#23863626" stroke="#3fb950" stroke-width="1.5"/>
+
+  <text x="197"  y="297" text-anchor="middle" font-size="9" fill="#3fb950">segment 1</text>
+  <text x="415"  y="297" text-anchor="middle" font-size="9" fill="#3fb950">segment 2</text>
+  <text x="602"  y="297" text-anchor="middle" font-size="9" fill="#3fb950">segment 3</text>
+
+  <text x="380" y="320" text-anchor="middle" font-size="11" fill="#3fb950">✓  3 clean segments — pause-grouped, sentence-aligned</text>
+
+  <!-- ────────── Legend / note ────────── -->
+  <rect x="70" y="340" width="620" height="60" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+  <text x="90" y="362" font-size="11" fill="#8b949e">Raising the threshold filters out low-confidence speech regions (breath sounds, room noise).</text>
+  <text x="90" y="380" font-size="11" fill="#8b949e">Tested values: 0.55 · <tspan font-weight="bold" fill="#3fb950">0.60 ✓ selected</tspan> · 0.65  —  0.60 preserved soft sentence-onset words while</text>
+  <text x="90" y="398" font-size="11" fill="#8b949e">merging within-sentence pauses into a single segment.</text>
+</svg>

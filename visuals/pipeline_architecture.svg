@@ -1,0 +1,59 @@
+<svg viewBox="0 0 760 600" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+
+  <!-- Background -->
+  <rect width="760" height="600" fill="#0d1117" rx="12"/>
+
+  <!-- Title -->
+  <text x="380" y="38" text-anchor="middle" font-size="17" font-weight="bold" fill="#e6edf3" letter-spacing="1">AutoEIT Transcription Pipeline</text>
+  <line x1="100" y1="50" x2="660" y2="50" stroke="#30363d" stroke-width="1"/>
+
+  <!-- ── STAGE BOXES ── -->
+
+  <!-- Stage 1: Audio Loading -->
+  <rect x="60" y="72" width="640" height="90" rx="8" fill="#161b22" stroke="#238636" stroke-width="1.5"/>
+  <rect x="60" y="72" width="8" height="90" rx="4" fill="#238636"/>
+  <text x="88" y="97" font-size="11" font-weight="bold" fill="#3fb950" letter-spacing="0.5">STAGE 1 — AUDIO LOADING</text>
+  <text x="88" y="117" font-size="12" fill="#8b949e">librosa.load( path, sr=16000, mono=True )</text>
+  <text x="88" y="136" font-size="12" fill="#8b949e">Skip leading seconds per file  →  audio[ skip_sec × 16000 : ]</text>
+  <text x="88" y="152" font-size="11" fill="#484f58">Output: float32 numpy array @ 16 kHz mono</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="380" y1="162" x2="380" y2="182" stroke="#30363d" stroke-width="2"/>
+  <polygon points="373,178 387,178 380,186" fill="#30363d"/>
+
+  <!-- Stage 2: VAD -->
+  <rect x="60" y="186" width="640" height="104" rx="8" fill="#161b22" stroke="#1f6feb" stroke-width="1.5"/>
+  <rect x="60" y="186" width="8" height="104" rx="4" fill="#1f6feb"/>
+  <text x="88" y="211" font-size="11" font-weight="bold" fill="#58a6ff" letter-spacing="0.5">STAGE 2 — VOICE ACTIVITY DETECTION  (Silero VAD)</text>
+  <text x="88" y="231" font-size="12" fill="#8b949e">threshold = 0.6   |   min_silence_duration_ms = 3500   |   speech_pad_ms = 300</text>
+  <text x="88" y="251" font-size="12" fill="#8b949e">Duration filter: keep segments where  0.65 s ≤ length ≤ 12.0 s</text>
+  <text x="88" y="271" font-size="11" fill="#484f58">Output: list of (start_sample, end_sample) tuples — up to 30 segments</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="380" y1="290" x2="380" y2="310" stroke="#30363d" stroke-width="2"/>
+  <polygon points="373,306 387,306 380,314" fill="#30363d"/>
+
+  <!-- Stage 3: ASR -->
+  <rect x="60" y="314" width="640" height="118" rx="8" fill="#161b22" stroke="#9e6a03" stroke-width="1.5"/>
+  <rect x="60" y="314" width="8" height="118" rx="4" fill="#9e6a03"/>
+  <text x="88" y="339" font-size="11" font-weight="bold" fill="#d29922" letter-spacing="0.5">STAGE 3 — ASR TRANSCRIPTION  (Whisper Medium Multilingual)</text>
+  <text x="88" y="360" font-size="12" fill="#8b949e">WhisperAudioConverter  →  mel spectrogram  (80 bins)</text>
+  <text x="88" y="379" font-size="12" fill="#8b949e">WhisperBackbone  →  greedy token decode  [ SOT, ES, TRANS, NOTSP, … EOT ]</text>
+  <text x="88" y="398" font-size="12" fill="#8b949e">clean_transcript()  →  strip [Music] / (laughs) / excess whitespace</text>
+  <text x="88" y="416" font-size="11" fill="#484f58">Output: plain-text string per segment</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="380" y1="432" x2="380" y2="452" stroke="#30363d" stroke-width="2"/>
+  <polygon points="373,448 387,448 380,456" fill="#30363d"/>
+
+  <!-- Stage 4: Excel Output -->
+  <rect x="60" y="456" width="640" height="90" rx="8" fill="#161b22" stroke="#8957e5" stroke-width="1.5"/>
+  <rect x="60" y="456" width="8" height="90" rx="4" fill="#8957e5"/>
+  <text x="88" y="481" font-size="11" font-weight="bold" fill="#bc8cff" letter-spacing="0.5">STAGE 4 — EXCEL OUTPUT  (openpyxl)</text>
+  <text x="88" y="501" font-size="12" fill="#8b949e">Load template  →  write 30 sentences to column C (rows 2–31)</text>
+  <text x="88" y="521" font-size="12" fill="#8b949e">Apply green fill #E2EFDA  +  word-wrap alignment per cell</text>
+  <text x="88" y="538" font-size="11" fill="#484f58">Output: AutoEIT Transcriptions.xlsx  (one sheet per participant file)</text>
+
+  <!-- Footer -->
+  <text x="380" y="582" text-anchor="middle" font-size="10" fill="#484f58">GSoC Evaluation Test — AutoEIT | Human-AI @ CERN</text>
+</svg>

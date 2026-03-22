@@ -1,0 +1,4 @@
+[ZoneTransfer]
+ZoneId=3
+ReferrerUrl=https://claude.ai/chat/46340100-59aa-434d-b689-1ab05a096b8e
+HostUrl=https://claude.ai/api/organizations/62a2f8b4-094e-4a03-b74a-3220cb7c2ddf/conversations/46340100-59aa-434d-b689-1ab05a096b8e/wiggle/download-file?path=%2Fmnt%2Fuser-data%2Foutputs%2Fvad_threshold_comparison.svg
